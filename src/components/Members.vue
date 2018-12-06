@@ -1,28 +1,30 @@
 <template>
   <div id="memberr">
     <ul>
-      <li
-        v-for="member in members"
-        @mouseover="member.show = true"
-        @mouseleave="member.show = false"
-      >
+      <li v-for="member in members" @click="member.show = !member.show">
         <h2>{{member.name}}</h2>
         <h3 v-show="member.show">{{member.speciality}}</h3>
       </li>
     </ul>
+    <button @click="deleteMember">Delete Member</button>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    members: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
-    return {
-      members: [
-        { name: "Muhammad", speciality: "Front-end", show: false },
-        { name: "Afif", speciality: "UX Analitic", show: false },
-        { name: "Fauzi", speciality: "UI Designer", show: false }
-      ]
-    };
+    return {};
+  },
+  methods: {
+    deleteMember: function() {
+      this.members.pop();
+    }
   }
 };
 </script>

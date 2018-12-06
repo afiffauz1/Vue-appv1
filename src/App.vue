@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-header></app-header>
-    <app-members></app-members>
-    <app-footer></app-footer>
+    <app-header v-bind:title="title"></app-header>
+    <app-members v-bind:members="members"></app-members>
+    <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
 
@@ -18,7 +18,26 @@ export default {
     "app-members": Member
   },
   data() {
-    return {};
+    return {
+      title: "AFIF VUE APPv1",
+      members: [
+        { name: "Muhammad", speciality: "Front-end", show: false },
+        { name: "Afif", speciality: "UX Analitic", show: false },
+        { name: "Fauzi", speciality: "UI Designer", show: false },
+        { name: "Afif Fauzi", speciality: "Vue Expert", show: false },
+        { name: "Muhammad Afif", speciality: "React Expert", show: false },
+        {
+          name: "Muhammad Afif Fauzi",
+          speciality: "Front-end Engineer",
+          show: false
+        }
+      ]
+    };
+  },
+  methods: {
+    updateTitle: function(updatedTitle) {
+      this.title = updatedTitle;
+    }
   }
 };
 </script>

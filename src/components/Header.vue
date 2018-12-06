@@ -1,15 +1,25 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 @click="changeTitle">{{ title }}</h1>
   </header>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String
+    }
+  },
   data() {
     return {
       title: "AFIF VUE APPv1"
     };
+  },
+  methods: {
+    changeTitle: function() {
+      this.title = "Wow its change :v";
+    }
   }
 };
 </script>
