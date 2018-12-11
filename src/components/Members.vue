@@ -25,6 +25,26 @@ export default {
     deleteMember: function() {
       this.members.pop();
     }
+  },
+
+  //life cycle hook
+  beforeCreate() {
+    alert("sebelum dibuat");
+  },
+  created() {
+    alert("Telah dibuat");
+  },
+  beforeMount() {
+    alert("sebelum dipasang");
+  },
+  mounted() {
+    alert("telah terpasang");
+  },
+  beforeUpdate() {
+    alert("sebelum di update");
+  },
+  updated() {
+    alert("sudah ter update");
   }
 };
 </script>
