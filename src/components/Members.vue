@@ -1,5 +1,5 @@
 <template>
-  <div id="memberr">
+  <div id="members">
     <ul>
       <li v-for="member in members" @click="member.show = !member.show">
         <h2>{{member.name}}</h2>
